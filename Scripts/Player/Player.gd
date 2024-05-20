@@ -4,6 +4,7 @@ extends CharacterBody2D
 var attacking = false
 
 func _physics_process(delta):
+	
 	if Input.is_action_just_pressed("ui_accept"):
 		attacking = true
 		anim_tree.get("parameters/playback").travel("Attack")
