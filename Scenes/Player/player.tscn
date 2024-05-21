@@ -1,4 +1,4 @@
-[gd_scene load_steps=221 format=3 uid="uid://bym88y527ru2g"]
+[gd_scene load_steps=222 format=3 uid="uid://bym88y527ru2g"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_6i32q"]
 [ext_resource type="Texture2D" uid="uid://bvhv6icgtk1kp" path="res://Assets/Monster_Pack_Free_Character/Monster Pack Character (Free)/Attack/Character_Attack.png" id="2_2rdgw"]
@@ -2075,6 +2075,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eci3c"]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_6i32q")
 
@@ -2092,6 +2094,9 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vyhv4")
+}
 tree_root = SubResource("AnimationNodeStateMachine_dfvr2")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Attack/BlendSpace2D/blend_position = Vector2(0, 0.00313473)
@@ -2105,5 +2110,10 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_bfml3")
 animation = &"Sword_Attack_Down"
 frame = 1
+
+[node name="AttackDetectorArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetectorArea"]
+shape = SubResource("CapsuleShape2D_eci3c")
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
