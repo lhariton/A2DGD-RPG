@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://b67cjeyp4nwi6"]
+[gd_scene load_steps=30 format=3 uid="uid://b67cjeyp4nwi6"]
 
 [ext_resource type="Texture2D" uid="uid://cqm1k3ngfo02k" path="res://Assets/Monster_Pack_21/Monster Pack 21 (Bovine)/Spritesheets/Updated Boar/Boar_Attack.png" id="1_q1ffx"]
+[ext_resource type="Script" path="res://Scripts/Monsters/Boar AI.gd" id="1_q6pee"]
 [ext_resource type="Texture2D" uid="uid://qcqg2h2qfbok" path="res://Assets/Monster_Pack_21/Monster Pack 21 (Bovine)/Spritesheets/Updated Boar/Boar_Idle.png" id="2_jgbw2"]
 [ext_resource type="Texture2D" uid="uid://bk42p08d08ai" path="res://Assets/Monster_Pack_21/Monster Pack 21 (Bovine)/Spritesheets/Updated Boar/Boar_Move.png" id="3_f5eqs"]
 
@@ -145,7 +146,7 @@ length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/path = NodePath("Anim:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -157,7 +158,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:skew")
+tracks/1/path = NodePath("Anim:skew")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -169,7 +170,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:scale")
+tracks/2/path = NodePath("Anim:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -184,7 +185,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/path = NodePath("Anim:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -196,7 +197,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:skew")
+tracks/1/path = NodePath("Anim:skew")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -208,7 +209,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:scale")
+tracks/2/path = NodePath("Anim:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -228,15 +229,21 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_cxxuh"]
 radius = 141.004
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alo2x"]
+size = Vector2(24, 10)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_jo0wk"]
-radius = 28.0
+radius = 24.0
 
-[node name="Boar" type="CharacterBody2D"]
+[node name="Boar" type="CharacterBody2D" groups=["Monster"]]
+script = ExtResource("1_q6pee")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_45ptl")
 animation = &"Attack"
+frame = 2
+frame_progress = 0.590335
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -250,11 +257,24 @@ libraries = {
 [node name="PlayerDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
-visible = false
 shape = SubResource("CircleShape2D_cxxuh")
+
+[node name="HitDetector" type="Area2D" parent="."]
+position = Vector2(0, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetector"]
+position = Vector2(17, 7)
+shape = SubResource("RectangleShape2D_alo2x")
 
 [node name="AttackDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetector"]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_jo0wk")
+
+[connection signal="frame_changed" from="Anim" to="." method="_on_anim_frame_changed"]
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]
+[connection signal="body_entered" from="HitDetector" to="." method="_on_hit_detector_body_entered"]
+[connection signal="body_entered" from="AttackDetector" to="." method="_on_attack_detector_body_entered"]
+[connection signal="body_exited" from="AttackDetector" to="." method="_on_attack_detector_body_exited"]

@@ -3,17 +3,18 @@ extends CharacterBody2D
 @onready var anim_tree = get_node("AnimationTree")
 var attacking: bool = false
 var alive: bool = true
-var health: int = 10
+var health: int = 100
+var damage: int = 2
 
 func _physics_process(delta):
-	
-	if Input.is_action_just_pressed("ui_accept"):
+	print(health)
+	if Input.is_action_just_pressed("Attack"):
 		attacking = true
 		anim_tree.get("parameters/playback").travel("Attack")
 		
 	if (attacking == false) and (alive == true):
-		var input_vector_x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-		var input_vector_y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		var input_vector_x = Input.get_action_strength("WalkRight") - Input.get_action_strength("WalkLeft")
+		var input_vector_y = Input.get_action_strength("WalkDown") - Input.get_action_strength("WalkUp")
 		var input_vector = Vector2(input_vector_x, input_vector_y).normalized()
 		
 		self.velocity = input_vector * delta * 5000
@@ -40,3 +41,8 @@ func hit(damage):
 		await anim_tree.animation_finished
 		self.queue_free()
 		
+
+
+func _on_attack_detector_area_body_entered(body):
+	if body.is_in_group("Monster"):
+		body.hit(damage)
