@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var anim_tree = get_node("AnimationTree")
 var attacking: bool = false
 var alive: bool = true
-var health: int = 100
+var health: int = 10
 var damage: int = 2
 
 func _physics_process(delta):
