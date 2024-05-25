@@ -39,7 +39,8 @@ func hit(damage):
 		alive = false
 		anim_tree.get("parameters/playback").travel("Death")
 		await anim_tree.animation_finished
-		self.queue_free()
+		get_node("PlayerAnim").queue_free()
+		get_node("../GameOver").game_over()
 		
 
 
