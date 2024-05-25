@@ -7,7 +7,10 @@ var health: int = 10
 var damage: int = 2
 
 func _physics_process(delta):
-	print(health)
+	#print(health)
+	if Input.is_action_just_pressed("Pause"):
+		get_node("../Pause").pause()
+		
 	if Input.is_action_just_pressed("Attack"):
 		attacking = true
 		anim_tree.get("parameters/playback").travel("Attack")
