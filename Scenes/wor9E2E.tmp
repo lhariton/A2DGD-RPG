@@ -1382,23 +1382,28 @@ position = Vector2(-451, -236)
 zoom = Vector2(2, 2)
 
 [node name="Boar AI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
+visible = false
 position = Vector2(-492, 153)
 player = NodePath("../Player")
 
 [node name="Boar AI2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
+visible = false
 position = Vector2(364, 271)
 player = NodePath("../Player")
 
 [node name="Boar AI3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
+visible = false
 position = Vector2(473, -257)
 player = NodePath("../Player")
 
 [node name="Boar AI4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
+visible = false
 position = Vector2(207, -85)
 player = NodePath("../Player")
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 process_mode = 2
+visible = false
 script = ExtResource("5_00vf7")
 
 [node name="Panel" type="Panel" parent="GameOver"]

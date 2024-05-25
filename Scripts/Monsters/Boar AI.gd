@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export var player: CharacterBody2D
 var speed: int = 2500
-var damage: int = 3
-var health: int = 5
+var damage: int = 2
+var health: int = 3
 @onready var anim = get_node("Anim")
 @onready var hitDetector = get_node("HitDetector/CollisionShape2D")
 
@@ -36,6 +36,7 @@ func _physics_process(delta):
 				$AnimationPlayer.play("Death")
 				await $AnimationPlayer.animation_finished
 				self.queue_free()
+	
 				
 		if direction.x < 0:
 			anim.flip_h = true
