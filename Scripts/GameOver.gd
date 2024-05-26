@@ -11,5 +11,6 @@ func _ready():
 
 
 func game_over():
+	get_node("../GUI").hide()
 	get_tree().paused = true
 	self.show()

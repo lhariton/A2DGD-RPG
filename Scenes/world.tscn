@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://b67cjeyp4nwi6" path="res://Scenes/Monsters/Boar AI.tscn" id="2_mhksi"]
 [ext_resource type="Texture2D" uid="uid://c2yueeun0tdq7" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Tilesets/Tileset-Animated Terrains-8 frames- transparency.png" id="3_d4hme"]
 [ext_resource type="Texture2D" uid="uid://b87p15gilq5d" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Tilesets/Tileset-Terrain2.png" id="4_c82d3"]
-[ext_resource type="Script" path="res://Scripts/GameOver.gd" id="5_00vf7"]
-[ext_resource type="Script" path="res://Scripts/GameWon.gd" id="6_oogmr"]
-[ext_resource type="Script" path="res://Scripts/Pause.gd" id="6_vakkd"]
+[ext_resource type="PackedScene" uid="uid://bjtxwcpd0fiwm" path="res://Scenes/Player/GUI/gui.tscn" id="5_ahey0"]
+[ext_resource type="PackedScene" uid="uid://ddyuil4eh2xl3" path="res://Scenes/game_over.tscn" id="5_q4f4d"]
+[ext_resource type="PackedScene" uid="uid://c1fcgvopwcr4e" path="res://Scenes/game_won.tscn" id="6_g8vm6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jy6y3"]
 texture = ExtResource("3_d4hme")
@@ -1421,93 +1421,10 @@ player = NodePath("../Player")
 position = Vector2(207, -85)
 player = NodePath("../Player")
 
-[node name="GameOver" type="CanvasLayer" parent="."]
-process_mode = 2
+[node name="GUI" parent="." instance=ExtResource("5_ahey0")]
+process_mode = 3
+
+[node name="GameOver" parent="." instance=ExtResource("5_q4f4d")]
+
+[node name="GameWon" parent="." instance=ExtResource("6_g8vm6")]
 visible = false
-script = ExtResource("5_00vf7")
-
-[node name="Panel" type="Panel" parent="GameOver"]
-offset_left = 278.0
-offset_top = 145.0
-offset_right = 881.0
-offset_bottom = 529.0
-
-[node name="Label" type="Label" parent="GameOver"]
-offset_left = 385.0
-offset_top = 210.0
-offset_right = 793.0
-offset_bottom = 253.0
-theme_override_font_sizes/font_size = 60
-text = "Game Over"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Retry" type="Button" parent="GameOver"]
-offset_left = 521.0
-offset_top = 351.0
-offset_right = 615.0
-offset_bottom = 420.0
-text = "Retry
-"
-
-[node name="GameWon" type="CanvasLayer" parent="."]
-process_mode = 2
-visible = false
-script = ExtResource("6_oogmr")
-
-[node name="Panel" type="Panel" parent="GameWon"]
-offset_left = 278.0
-offset_top = 145.0
-offset_right = 955.0
-offset_bottom = 529.0
-
-[node name="Label" type="Label" parent="GameWon"]
-offset_left = 385.0
-offset_top = 210.0
-offset_right = 793.0
-offset_bottom = 253.0
-theme_override_font_sizes/font_size = 60
-text = "Game Won, GG EZ"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Retry" type="Button" parent="GameWon"]
-offset_left = 585.0
-offset_top = 349.0
-offset_right = 679.0
-offset_bottom = 418.0
-text = "Go Again? 
-"
-
-[node name="Pause" type="CanvasLayer" parent="."]
-process_mode = 2
-visible = false
-script = ExtResource("6_vakkd")
-
-[node name="Panel" type="Panel" parent="Pause"]
-offset_left = 278.0
-offset_top = 145.0
-offset_right = 881.0
-offset_bottom = 529.0
-
-[node name="Label" type="Label" parent="Pause"]
-offset_left = 385.0
-offset_top = 210.0
-offset_right = 793.0
-offset_bottom = 253.0
-theme_override_font_sizes/font_size = 60
-text = "Game Paused"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Resume" type="Button" parent="Pause"]
-offset_left = 521.0
-offset_top = 351.0
-offset_right = 615.0
-offset_bottom = 420.0
-text = "Resume
-"
-
-[connection signal="pressed" from="GameOver/Retry" to="GameOver" method="_on_retry_pressed"]
-[connection signal="pressed" from="GameWon/Retry" to="GameWon" method="_on_retry_pressed"]
-[connection signal="pressed" from="Pause/Resume" to="Pause" method="_on_resume_pressed"]

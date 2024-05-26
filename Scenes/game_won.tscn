@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1fcgvopwcr4e"]
+
+[ext_resource type="Script" path="res://Scripts/GameWon.gd" id="1_dbyhy"]
+
+[node name="GameWon" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_dbyhy")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 278.0
+offset_top = 145.0
+offset_right = 955.0
+offset_bottom = 529.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 328.0
+offset_top = 207.0
+offset_right = 928.0
+offset_bottom = 281.0
+theme_override_font_sizes/font_size = 60
+text = "Game Won, GG EZ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Retry" type="Button" parent="."]
+offset_left = 491.0
+offset_top = 362.0
+offset_right = 762.0
+offset_bottom = 431.0
+text = "Go Again? 
+"
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
