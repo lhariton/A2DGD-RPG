@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://b67cjeyp4nwi6"]
+[gd_scene load_steps=31 format=3 uid="uid://b67cjeyp4nwi6"]
 
 [ext_resource type="Texture2D" uid="uid://cqm1k3ngfo02k" path="res://Assets/Monster_Pack_21/Monster Pack 21 (Bovine)/Spritesheets/Updated Boar/Boar_Attack.png" id="1_q1ffx"]
 [ext_resource type="Script" path="res://Scripts/Monsters/Boar AI.gd" id="1_q6pee"]
 [ext_resource type="Texture2D" uid="uid://qcqg2h2qfbok" path="res://Assets/Monster_Pack_21/Monster Pack 21 (Bovine)/Spritesheets/Updated Boar/Boar_Idle.png" id="2_jgbw2"]
 [ext_resource type="Texture2D" uid="uid://bk42p08d08ai" path="res://Assets/Monster_Pack_21/Monster Pack 21 (Bovine)/Spritesheets/Updated Boar/Boar_Move.png" id="3_f5eqs"]
+[ext_resource type="AudioStream" uid="uid://tm3r5qsdypa0" path="res://Assets/Audio/hurt.wav" id="5_ys1v1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g47tq"]
 atlas = ExtResource("1_q1ffx")
@@ -242,8 +243,6 @@ script = ExtResource("1_q6pee")
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_45ptl")
 animation = &"Attack"
-frame = 2
-frame_progress = 0.590335
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -271,6 +270,10 @@ shape = SubResource("RectangleShape2D_alo2x")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetector"]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_jo0wk")
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ys1v1")
+volume_db = 5.0
 
 [connection signal="frame_changed" from="Anim" to="." method="_on_anim_frame_changed"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

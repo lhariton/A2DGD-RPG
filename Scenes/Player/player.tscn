@@ -1,4 +1,4 @@
-[gd_scene load_steps=243 format=3 uid="uid://bym88y527ru2g"]
+[gd_scene load_steps=244 format=3 uid="uid://bym88y527ru2g"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_6i32q"]
 [ext_resource type="Texture2D" uid="uid://bvhv6icgtk1kp" path="res://Assets/Monster_Pack_Free_Character/Monster Pack Character (Free)/Attack/Character_Attack.png" id="2_2rdgw"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bcevvlil5yrn5" path="res://Assets/Monster_Pack_Free_Character/Monster Pack Character (Free)/Attack/Equipment/Character_Attack_Sword.png" id="6_4pnr4"]
 [ext_resource type="Texture2D" uid="uid://cfdjlkkbqqycl" path="res://Assets/Monster_Pack_Free_Character/Monster Pack Character (Free)/Move/Equipment/Character_Move_Sword.png" id="6_batvq"]
 [ext_resource type="Texture2D" uid="uid://bt18phkdpptv" path="res://Assets/Ninja Adventure - Asset Pack/FX/Smoke/Smoke/SpriteSheet.png" id="6_c1mk2"]
+[ext_resource type="AudioStream" uid="uid://bo30x2p1a4juf" path="res://Assets/Audio/player_hurt.wav" id="10_33s54"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8q71p"]
 
@@ -1373,6 +1374,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerAnim:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_7wv65"]
 resource_name = "Dash_Left"
@@ -1400,6 +1413,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerAnim:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_c73iq"]
@@ -1429,6 +1454,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerAnim:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_d28jl"]
 resource_name = "Dash_Up"
@@ -1456,6 +1493,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerAnim:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_twyan"]
@@ -1748,6 +1797,32 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerAnim:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6anqb"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Smoke"]
+}
 
 [sub_resource type="Animation" id="Animation_hg13m"]
 resource_name = "Walk_Down"
@@ -1863,20 +1938,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_6anqb"]
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerAnim:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Smoke"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyhv4"]
@@ -2474,14 +2535,11 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_vyhv4")
-}
 tree_root = SubResource("AnimationNodeStateMachine_dfvr2")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Attack/BlendSpace2D/blend_position = Vector2(0, 0.00313473)
 parameters/Dash/BlendSpace2D/blend_position = Vector2(0, 0)
-parameters/Dash/TimeScale/scale = 1.0
+parameters/Dash/TimeScale/scale = 2.0
 parameters/Death/BlendSpace2D/blend_position = Vector2(-0.0018416, 0.00983608)
 parameters/Idle/BlendSpace2D/blend_position = Vector2(-0.00166667, 0.00510204)
 parameters/Idle/TimeScale/scale = 0.1
@@ -2498,6 +2556,10 @@ frame = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetectorArea"]
 shape = SubResource("CapsuleShape2D_eci3c")
 disabled = true
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_33s54")
+volume_db = 5.0
 
 [connection signal="animation_finished" from="PlayerAnim" to="." method="_on_player_anim_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

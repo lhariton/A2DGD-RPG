@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcjkcfoxin8qu"]
+[gd_scene load_steps=13 format=3 uid="uid://bcjkcfoxin8qu"]
 
+[ext_resource type="Script" path="res://Scenes/world.gd" id="1_enenp"]
 [ext_resource type="PackedScene" uid="uid://bym88y527ru2g" path="res://Scenes/Player/player.tscn" id="1_jx0ds"]
 [ext_resource type="PackedScene" uid="uid://b67cjeyp4nwi6" path="res://Scenes/Monsters/Boar AI.tscn" id="2_mhksi"]
 [ext_resource type="Texture2D" uid="uid://c2yueeun0tdq7" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Tilesets/Tileset-Animated Terrains-8 frames- transparency.png" id="3_d4hme"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bjtxwcpd0fiwm" path="res://Scenes/Player/GUI/gui.tscn" id="5_ahey0"]
 [ext_resource type="PackedScene" uid="uid://ddyuil4eh2xl3" path="res://Scenes/game_over.tscn" id="5_q4f4d"]
 [ext_resource type="PackedScene" uid="uid://c1fcgvopwcr4e" path="res://Scenes/game_won.tscn" id="6_g8vm6"]
+[ext_resource type="AudioStream" uid="uid://bfigixixm8rat" path="res://Assets/Audio/Naruto Theme - The Raising Fighting Spirit.mp3" id="9_iugt8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jy6y3"]
 texture = ExtResource("3_d4hme")
@@ -1389,6 +1391,7 @@ sources/1 = SubResource("TileSetAtlasSource_5ph44")
 
 [node name="World" type="Node2D"]
 position = Vector2(605, 300)
+script = ExtResource("1_enenp")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_suhaq")
@@ -1423,8 +1426,13 @@ player = NodePath("../Player")
 
 [node name="GUI" parent="." instance=ExtResource("5_ahey0")]
 process_mode = 3
+visible = false
 
 [node name="GameOver" parent="." instance=ExtResource("5_q4f4d")]
 
 [node name="GameWon" parent="." instance=ExtResource("6_g8vm6")]
 visible = false
+
+[node name="ThemeSong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_iugt8")
+volume_db = -5.0

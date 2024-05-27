@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bfigixixm8rat"
+path="res://.godot/imported/Naruto Theme - The Raising Fighting Spirit.mp3-92b06846e9cbe26552a40df8ed3a5309.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Naruto Theme - The Raising Fighting Spirit.mp3"
+dest_files=["res://.godot/imported/Naruto Theme - The Raising Fighting Spirit.mp3-92b06846e9cbe26552a40df8ed3a5309.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

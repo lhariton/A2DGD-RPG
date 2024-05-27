@@ -2,17 +2,20 @@ extends CharacterBody2D
 
 @onready var anim_tree = get_node("AnimationTree")
 
+var invuFrame: bool = false
 var attacking: bool = false
 var alive: bool = true
 var health: int = 10
 var damage: int = 1
 var defense: int = 0
 
-var rollVector
+var walkMS = 5000
+var dashMS = 3 * walkMS
 
-var dashDirection = Vector2(1,0)
+var rollVector
 var canDash = true
 var dashing = false
+
 
 func dash(delta):
 	#var input_vector = getInputVector()
@@ -20,7 +23,8 @@ func dash(delta):
 	if dashing == false && canDash == true:
 		dashing = true
 		canDash = false
-		self.velocity = rollVector * delta * 10000
+		invuFrame = true
+		self.velocity = rollVector * delta * dashMS
 		#get_node("PlayerAnim").play("Smoke")
 		anim_tree.get("parameters/playback").travel("Dash")	
 		#move_and_slide()
@@ -57,7 +61,7 @@ func _physics_process(delta):
 	
 	if (attacking == false) and (alive == true) and (dashing == false):
 		var input_vector = getInputVector()
-		self.velocity = input_vector * delta * 5000
+		self.velocity = input_vector * delta * walkMS
 		if input_vector == Vector2.ZERO:
 			anim_tree.get("parameters/playback").travel("Idle")
 		else:
@@ -84,13 +88,17 @@ func _on_animation_tree_animation_finished(anim_name):
 	if "Dash" in anim_name:
 		#print("resetDash")
 		self.velocity = Vector2.ZERO
+		invuFrame = false
 		dashing = false	
 		await get_tree().create_timer(1).timeout
 		resetDash()
 	
 		
 func hit(damage):
-	health -= damage
+	if !invuFrame:
+		$Hurt.play()
+		health -= damage
+		
 	if health <=0:
 		alive = false
 		anim_tree.get("parameters/playback").travel("Death")

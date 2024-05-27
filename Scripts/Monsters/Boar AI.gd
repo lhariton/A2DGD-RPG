@@ -49,6 +49,7 @@ func _physics_process(delta):
 
 func hit(damage):
 	health -= damage
+	$Hurt.play()
 	if health <=0:
 		current_state = mobState["DEAD"]
 
