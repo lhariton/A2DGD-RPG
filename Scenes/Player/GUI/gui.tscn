@@ -69,6 +69,24 @@ offset_bottom = 366.0
 
 [node name="Quests" parent="Container" instance=ExtResource("5_31xxi")]
 
+[node name="Dialog" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Dialog"]
+layout_mode = 0
+offset_top = 608.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Dialog" parent="Dialog" instance=ExtResource("3_tlbqw")]
+offset_left = 517.0
+offset_top = 615.0
+offset_right = 654.0
+offset_bottom = 647.0
+
 [connection signal="pressed" from="Container/VBoxContainer/Profile" to="." method="_on_profile_pressed"]
 [connection signal="pressed" from="Container/VBoxContainer/Inventory" to="." method="_on_inventory_pressed"]
 [connection signal="pressed" from="Container/VBoxContainer/Quests" to="." method="_on_quests_pressed"]

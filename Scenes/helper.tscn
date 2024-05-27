@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://dswwqgj8qpdxw"]
+
+[ext_resource type="Texture2D" uid="uid://b4uu4w6qt6xiu" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Characters/luck creature-idle.png" id="1_55sp6"]
+[ext_resource type="Script" path="res://Scripts/helper.gd" id="1_cnkph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd3ng"]
+atlas = ExtResource("1_55sp6")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdckw"]
+atlas = ExtResource("1_55sp6")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8yjw"]
+atlas = ExtResource("1_55sp6")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsvbq"]
+atlas = ExtResource("1_55sp6")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8ioc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pd3ng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdckw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8yjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsvbq")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_up2kl"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fqoxt"]
+radius = 39.0
+
+[node name="Helper" type="CharacterBody2D"]
+script = ExtResource("1_cnkph")
+
+[node name="AnimPlayer" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g8ioc")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.594487
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9, 1)
+shape = SubResource("CircleShape2D_up2kl")
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+shape = SubResource("CircleShape2D_fqoxt")
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]

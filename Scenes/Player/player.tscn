@@ -2548,8 +2548,7 @@ parameters/Walk/BlendSpace2D/blend_position = Vector2(0, 0.00313473)
 [node name="SwordAnim" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_bfml3")
-animation = &"Sword_Attack_Down"
-frame = 1
+animation = &"Sword_Attack_Up"
 
 [node name="AttackDetectorArea" type="Area2D" parent="."]
 
