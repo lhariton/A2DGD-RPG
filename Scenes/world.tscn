@@ -1423,6 +1423,9 @@ position = Vector2(-659, -421)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 
+[node name="Helper" parent="." instance=ExtResource("10_bphtt")]
+position = Vector2(-525, -433)
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Boar AI" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
@@ -1445,9 +1448,6 @@ player = NodePath("../../Player")
 position = Vector2(812, 215)
 scale = Vector2(2, 2)
 player = NodePath("../../Player")
-
-[node name="Helper" parent="." instance=ExtResource("10_bphtt")]
-position = Vector2(-525, -433)
 
 [node name="Trees" type="Node" parent="."]
 

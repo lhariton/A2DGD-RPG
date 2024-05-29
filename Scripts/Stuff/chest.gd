@@ -1,12 +1,9 @@
 extends Node2D
 
-
 var state = "closed" #closed/open
 var player_in_area = false
 var item = preload("res://Scenes/Stuff/item_collectable.tscn")
 
-func _ready():
-	pass
 	
 func _process(delta):
 	if state == "closed":
@@ -22,7 +19,8 @@ func _process(delta):
 		
 func drop_item():
 	var item_instance = item.instantiate()
-	item_instance.global_position = $Marker2D.global_position
+	#item_instance.global_position = $Marker2D.global_position
+	item_instance.global_position = self.position - Vector2(0,20)
 	var world = get_parent()
 	world.add_child(item_instance)
 	
