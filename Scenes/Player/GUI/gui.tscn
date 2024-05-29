@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjtxwcpd0fiwm"]
 
-[ext_resource type="Script" path="res://Scripts/Player/GUI/GUI.gd" id="1_0buvp"]
+[ext_resource type="Script" path="res://Scripts/Player/GUI/GUI.gd" id="1_0cxmp"]
 [ext_resource type="Texture2D" uid="uid://cq834sn5yet8" path="res://Assets/ui_big_pieces.png" id="2_nigat"]
 [ext_resource type="PackedScene" uid="uid://d18jdwp8wrk2o" path="res://Scenes/Player/GUI/profile.tscn" id="3_tlbqw"]
 [ext_resource type="PackedScene" uid="uid://o1j76o5olyee" path="res://Scenes/Player/GUI/inventory.tscn" id="4_bdumu"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://mgglmab8c3bf" path="res://Scenes/Player/GUI/dialog.tscn" id="6_wis50"]
 
 [node name="GUI" type="CanvasLayer"]
-script = ExtResource("1_0buvp")
+script = ExtResource("1_0cxmp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(130, 23.5)

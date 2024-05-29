@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://o1j76o5olyee"]
+[gd_scene load_steps=3 format=3 uid="uid://o1j76o5olyee"]
 
 [ext_resource type="Script" path="res://Scripts/Player/GUI/inventory.gd" id="1_k1l8d"]
+[ext_resource type="Script" path="res://Scripts/Player/GUI/inventory_slot.gd" id="2_uoq5p"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -8,3 +9,73 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_k1l8d")
+
+[node name="HeadSlot" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 504.0
+offset_top = 248.0
+offset_right = 544.0
+offset_bottom = 288.0
+script = ExtResource("2_uoq5p")
+
+[node name="ChestSlot" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 504.0
+offset_top = 296.0
+offset_right = 544.0
+offset_bottom = 336.0
+script = ExtResource("2_uoq5p")
+type = 1
+
+[node name="RightHandSlot" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 448.0
+offset_top = 296.0
+offset_right = 488.0
+offset_bottom = 336.0
+script = ExtResource("2_uoq5p")
+type = 4
+
+[node name="LeftHandSlot" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 560.0
+offset_top = 296.0
+offset_right = 600.0
+offset_bottom = 336.0
+script = ExtResource("2_uoq5p")
+type = 4
+
+[node name="LegSlot" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 504.0
+offset_top = 344.0
+offset_right = 544.0
+offset_bottom = 384.0
+script = ExtResource("2_uoq5p")
+type = 2
+
+[node name="FeetSlot" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 504.0
+offset_top = 400.0
+offset_right = 544.0
+offset_bottom = 440.0
+script = ExtResource("2_uoq5p")
+type = 3
+
+[node name="Grid" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 632.0
+offset_top = 240.0
+offset_right = 928.0
+offset_bottom = 456.0
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 6

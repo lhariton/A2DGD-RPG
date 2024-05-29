@@ -23,7 +23,7 @@ func hideGUI():
 	$Container/Profile.hide()
 	$Container/Inventory.hide()
 	$Container/Quests.hide()
-	$Dialog.hide()
+	$DialogContainer.hide()
 
 func _on_profile_pressed():
 	hideGUI()
