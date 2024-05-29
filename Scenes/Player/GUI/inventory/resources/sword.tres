@@ -1,3 +1,13 @@
-[gd_resource type="Resource" format=3 uid="uid://cjuh43xmw84sb"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cjuh43xmw84sb"]
+
+[ext_resource type="Texture2D" uid="uid://c4kfby7ysuinn" path="res://Assets/Items/Wooden_Weapon1.png" id="1_5gwah"]
+[ext_resource type="Script" path="res://Scripts/Player/GUI/item_data.gd" id="2_wvlf0"]
 
 [resource]
+script = ExtResource("2_wvlf0")
+type = 4
+item_name = "Wooden Sword"
+item_damage = 5
+item_defense = 1
+description = "This is a wooden sword"
+item_texture = ExtResource("1_5gwah")

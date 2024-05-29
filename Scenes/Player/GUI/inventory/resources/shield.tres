@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c3ynnc7ogxmv"]
+
+[ext_resource type="Texture2D" uid="uid://b8vf5l5fjb6nc" path="res://Assets/Items/Wooden_Shield1.png" id="1_4vanf"]
+[ext_resource type="Script" path="res://Scripts/Player/GUI/item_data.gd" id="2_4uf4c"]
+
+[resource]
+script = ExtResource("2_4uf4c")
+type = 4
+item_name = "Wooden Shield"
+item_damage = 0
+item_defense = 5
+description = "This is a wooden shield"
+item_texture = ExtResource("1_4vanf")
