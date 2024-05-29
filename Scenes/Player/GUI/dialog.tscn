@@ -1,18 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://mgglmab8c3bf"]
+[gd_scene load_steps=4 format=3 uid="uid://mgglmab8c3bf"]
 
-[ext_resource type="Script" path="res://Scripts/Player/GUI/dialog.gd" id="1_6c6il"]
+[ext_resource type="Script" path="res://Scenes/Player/GUI/dialog.gd" id="1_xtfbg"]
+[ext_resource type="Texture2D" uid="uid://b2y2kftvqgxjh" path="res://Assets/dialog.png" id="2_opbk3"]
+[ext_resource type="FontFile" uid="uid://c0olsv5pv0hwn" path="res://Assets/njnaruto.ttf" id="3_tbpk8"]
 
-[node name="Dialog" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="TextBox" type="MarginContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_6c6il")
+script = ExtResource("1_xtfbg")
 
-[node name="dialog_label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 20.0
-text = "ceva dialog"
-horizontal_alignment = 1
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_opbk3")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tbpk8")
 vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
