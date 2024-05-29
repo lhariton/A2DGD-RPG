@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://mgglmab8c3bf"]
+
+[ext_resource type="Script" path="res://Scripts/Player/GUI/dialog.gd" id="1_6c6il"]
+
+[node name="Dialog" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6c6il")
+
+[node name="dialog_label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+text = "ceva dialog"
+horizontal_alignment = 1
+vertical_alignment = 1

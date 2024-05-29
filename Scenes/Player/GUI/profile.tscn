@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://d18jdwp8wrk2o"]
+[gd_scene load_steps=2 format=3 uid="uid://d18jdwp8wrk2o"]
+
+[ext_resource type="Script" path="res://Scripts/Player/GUI/profile.gd" id="1_i7rjn"]
 
 [node name="Profile" type="Control"]
 layout_mode = 3
@@ -7,9 +9,11 @@ offset_left = 116.0
 offset_top = 37.0
 offset_right = 156.0
 offset_bottom = 77.0
+script = ExtResource("1_i7rjn")
 
-[node name="dialog" type="Label" parent="."]
+[node name="stats_label" type="Label" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 20.0
-text = "Dialog2"
+text = "Player stats:
+"
