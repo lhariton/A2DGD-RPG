@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyvkdpl1oskyb"]
+
+[ext_resource type="Texture2D" uid="uid://t67ew2hpqrx3" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Props/Atlas-Props.png" id="1_1fnli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ig1f"]
+size = Vector2(19, 33)
+
+[node name="Big Rock" type="StaticBody2D"]
+position = Vector2(368, -60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 2.5)
+shape = SubResource("RectangleShape2D_5ig1f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1fnli")
+region_enabled = true
+region_rect = Rect2(203, 208, 39, 73)

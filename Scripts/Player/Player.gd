@@ -113,6 +113,14 @@ func _on_attack_detector_area_body_entered(body):
 		body.hit(damage)
 
 	
+func godMode():
+	damage *= 2
+	defense *= 2
+	health = 10
+	health *= 2
+	walkMS *= 2
+	$GodMode.visible = true
+	$GodMode.play("Idle")
 
 
 func _on_player_anim_animation_finished(anim_name):
