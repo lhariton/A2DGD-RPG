@@ -1432,5 +1432,15 @@ layer_1/tile_data = PackedInt32Array(655342, 0, 4, 589806, 0, 1, 524270, 0, 1, 4
 [node name="Drums" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_iixck")
 
+[node name="for noobs" type="Label" parent="."]
+offset_left = 749.0
+offset_top = 284.0
+offset_right = 910.0
+offset_bottom = 373.0
+text = "WASD to move
+Click to attack
+Space to dash
+E to interract"
+
 [connection signal="pressed" from="Play" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

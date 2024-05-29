@@ -116,6 +116,7 @@ func _on_attack_detector_area_body_entered(body):
 func godMode():
 	damage *= 2
 	defense *= 2
+	health = 10
 	health *= 2
 	walkMS *= 2
 	$GodMode.visible = true
