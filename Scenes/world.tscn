@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bcjkcfoxin8qu"]
+[gd_scene load_steps=41 format=3 uid="uid://bcjkcfoxin8qu"]
 
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_enenp"]
 [ext_resource type="PackedScene" uid="uid://bym88y527ru2g" path="res://Scenes/Player/player.tscn" id="1_jx0ds"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://t67ew2hpqrx3" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Props/Atlas-Props.png" id="7_d54n3"]
 [ext_resource type="PackedScene" uid="uid://2gjk38bo8srt" path="res://Scenes/Stuff/tree.tscn" id="7_l5sc7"]
 [ext_resource type="PackedScene" uid="uid://vqpmfix2c176" path="res://Scenes/Stuff/chest.tscn" id="8_p1nyl"]
+[ext_resource type="PackedScene" uid="uid://dyvkdpl1oskyb" path="res://Scenes/Stuff/big_rock.tscn" id="9_6su1k"]
 [ext_resource type="AudioStream" uid="uid://bfigixixm8rat" path="res://Assets/Audio/Naruto Theme - The Raising Fighting Spirit.mp3" id="9_iugt8"]
 [ext_resource type="PackedScene" uid="uid://dswwqgj8qpdxw" path="res://Scenes/helper.tscn" id="10_bphtt"]
 
@@ -1929,60 +1930,34 @@ region_rect = Rect2(41, 198, 19, 12)
 
 [node name="Big Rocks" type="Node" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Big Rocks"]
-position = Vector2(368, -60)
-texture = ExtResource("7_d54n3")
-region_enabled = true
-region_rect = Rect2(203, 208, 39, 73)
+[node name="Big Rock" parent="Big Rocks" instance=ExtResource("9_6su1k")]
 
-[node name="Sprite2D2" type="Sprite2D" parent="Big Rocks"]
-position = Vector2(328, 507)
-texture = ExtResource("7_d54n3")
-region_enabled = true
-region_rect = Rect2(203, 208, 39, 73)
+[node name="Big Rock2" parent="Big Rocks" instance=ExtResource("9_6su1k")]
+position = Vector2(330, 512)
 
-[node name="Sprite2D3" type="Sprite2D" parent="Big Rocks"]
-position = Vector2(-93, 639)
-texture = ExtResource("7_d54n3")
-region_enabled = true
-region_rect = Rect2(203, 208, 39, 73)
+[node name="Big Rock3" parent="Big Rocks" instance=ExtResource("9_6su1k")]
+position = Vector2(-94, 634)
 
-[node name="Sprite2D4" type="Sprite2D" parent="Big Rocks"]
-position = Vector2(602, 539)
-texture = ExtResource("7_d54n3")
-region_enabled = true
-region_rect = Rect2(203, 208, 39, 73)
+[node name="Big Rock4" parent="Big Rocks" instance=ExtResource("9_6su1k")]
+position = Vector2(605, 535)
 
-[node name="Sprite2D5" type="Sprite2D" parent="Big Rocks"]
-position = Vector2(1038, 640)
-texture = ExtResource("7_d54n3")
-region_enabled = true
-region_rect = Rect2(203, 208, 39, 73)
+[node name="Big Rock5" parent="Big Rocks" instance=ExtResource("9_6su1k")]
+position = Vector2(1043, 640)
 
-[node name="Sprite2D6" type="Sprite2D" parent="Big Rocks"]
-position = Vector2(1375, 802)
-texture = ExtResource("7_d54n3")
-region_enabled = true
-region_rect = Rect2(203, 208, 39, 73)
+[node name="Big Rock6" parent="Big Rocks" instance=ExtResource("9_6su1k")]
+position = Vector2(1377, 796)
 
-[node name="Sprite2D7" type="Sprite2D" parent="Big Rocks"]
-position = Vector2(1191, -128)
-texture = ExtResource("7_d54n3")
-region_enabled = true
-region_rect = Rect2(203, 208, 39, 73)
+[node name="Big Rock7" parent="Big Rocks" instance=ExtResource("9_6su1k")]
+position = Vector2(1190, -135)
 
-[node name="Sprite2D8" type="Sprite2D" parent="Big Rocks"]
-position = Vector2(877, -23)
-texture = ExtResource("7_d54n3")
-region_enabled = true
-region_rect = Rect2(203, 208, 39, 73)
+[node name="Big Rock8" parent="Big Rocks" instance=ExtResource("9_6su1k")]
+position = Vector2(879, -25)
 
 [node name="Chest" parent="." instance=ExtResource("8_p1nyl")]
 position = Vector2(-73, 20)
 
 [node name="GUI" parent="." instance=ExtResource("5_ahey0")]
 process_mode = 3
-visible = false
 
 [node name="GameOver" parent="." instance=ExtResource("5_q4f4d")]
 
