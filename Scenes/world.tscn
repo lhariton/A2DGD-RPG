@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bcjkcfoxin8qu"]
+[gd_scene load_steps=15 format=3 uid="uid://bcjkcfoxin8qu"]
 
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_enenp"]
 [ext_resource type="PackedScene" uid="uid://bym88y527ru2g" path="res://Scenes/Player/player.tscn" id="1_jx0ds"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bjtxwcpd0fiwm" path="res://Scenes/Player/GUI/gui.tscn" id="5_ahey0"]
 [ext_resource type="PackedScene" uid="uid://ddyuil4eh2xl3" path="res://Scenes/game_over.tscn" id="5_q4f4d"]
 [ext_resource type="PackedScene" uid="uid://c1fcgvopwcr4e" path="res://Scenes/game_won.tscn" id="6_g8vm6"]
+[ext_resource type="Texture2D" uid="uid://t67ew2hpqrx3" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Props/Atlas-Props.png" id="7_d54n3"]
 [ext_resource type="AudioStream" uid="uid://bfigixixm8rat" path="res://Assets/Audio/Naruto Theme - The Raising Fighting Spirit.mp3" id="9_iugt8"]
 [ext_resource type="PackedScene" uid="uid://dswwqgj8qpdxw" path="res://Scenes/helper.tscn" id="10_bphtt"]
 
@@ -1421,29 +1422,396 @@ position = Vector2(-659, -421)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Boar AI" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
+position = Vector2(483, -166)
+player = NodePath("../../Player")
+
+[node name="Boar AI2" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
+position = Vector2(-33, 255)
+player = NodePath("../../Player")
+
+[node name="Boar AI3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
+position = Vector2(795, 470)
+player = NodePath("../../Player")
+
+[node name="Boar AI4" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
+position = Vector2(1190, 204)
+player = NodePath("../../Player")
+
+[node name="Boar AI Mare" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
+position = Vector2(812, 215)
+scale = Vector2(2, 2)
+player = NodePath("../../Player")
+
 [node name="Helper" parent="." instance=ExtResource("10_bphtt")]
 position = Vector2(-525, -433)
 
-[node name="Boar AI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
-position = Vector2(-122, -466)
-player = NodePath("../Player")
+[node name="Trees" type="Node" parent="."]
 
-[node name="Boar AI2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
-position = Vector2(-638, -45)
-player = NodePath("../Player")
+[node name="TreeSprite" type="Sprite2D" parent="Trees"]
+position = Vector2(188, -67)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
 
-[node name="Boar AI3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
-position = Vector2(190, 170)
-player = NodePath("../Player")
+[node name="TreeSprite2" type="Sprite2D" parent="Trees"]
+position = Vector2(-133, -156)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
 
-[node name="Boar AI4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
-position = Vector2(585, -96)
-player = NodePath("../Player")
+[node name="TreeSprite3" type="Sprite2D" parent="Trees"]
+position = Vector2(313, -168)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
 
-[node name="Boar AI Mare" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_mhksi")]
-position = Vector2(207, -85)
-scale = Vector2(2, 2)
-player = NodePath("../Player")
+[node name="TreeSprite4" type="Sprite2D" parent="Trees"]
+position = Vector2(112, 83)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite5" type="Sprite2D" parent="Trees"]
+position = Vector2(-107, 72)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite6" type="Sprite2D" parent="Trees"]
+position = Vector2(137, 225)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite7" type="Sprite2D" parent="Trees"]
+position = Vector2(-115, 323)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite8" type="Sprite2D" parent="Trees"]
+position = Vector2(106, 397)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite9" type="Sprite2D" parent="Trees"]
+position = Vector2(-78, 517)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite10" type="Sprite2D" parent="Trees"]
+position = Vector2(122, 630)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite11" type="Sprite2D" parent="Trees"]
+position = Vector2(-62, 781)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite12" type="Sprite2D" parent="Trees"]
+position = Vector2(233, 780)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite13" type="Sprite2D" parent="Trees"]
+position = Vector2(552, 832)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite14" type="Sprite2D" parent="Trees"]
+position = Vector2(565, 636)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite15" type="Sprite2D" parent="Trees"]
+position = Vector2(837, 748)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite16" type="Sprite2D" parent="Trees"]
+position = Vector2(968, 503)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite17" type="Sprite2D" parent="Trees"]
+position = Vector2(1192, 741)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite18" type="Sprite2D" parent="Trees"]
+position = Vector2(1370, 510)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite19" type="Sprite2D" parent="Trees"]
+position = Vector2(1209, 334)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite20" type="Sprite2D" parent="Trees"]
+position = Vector2(1398, 151)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite21" type="Sprite2D" parent="Trees"]
+position = Vector2(1241, 13)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite22" type="Sprite2D" parent="Trees"]
+position = Vector2(1361, -127)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite23" type="Sprite2D" parent="Trees"]
+position = Vector2(1011, -112)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="TreeSprite24" type="Sprite2D" parent="Trees"]
+position = Vector2(595, -42)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(256, -1, 31, 58)
+
+[node name="Small Rocks" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Small Rocks"]
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(127, -169)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(16, -171)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(19, -98)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(124, -99)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(-132, -48)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(-57, -173)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D8" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(269, -24)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D9" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(329, -96)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D10" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(235, -142)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D11" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(111, 162)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D12" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(-126, 132)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D13" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(152, 17)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D14" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(82, 272)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D15" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(-106, 427)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D16" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(250, 578)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D17" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(-123, 748)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D18" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(174, 813)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D19" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(61, 546)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D20" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(499, 800)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D21" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(769, 632)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D22" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(1050, 827)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D23" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(1296, 663)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D24" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(1090, 474)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D25" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(1349, 377)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D26" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(1098, 80)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D27" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(1354, -18)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Sprite2D28" type="Sprite2D" parent="Small Rocks"]
+position = Vector2(846, -128)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(41, 198, 19, 12)
+
+[node name="Big Rocks" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Big Rocks"]
+position = Vector2(368, -60)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(203, 208, 39, 73)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Big Rocks"]
+position = Vector2(328, 507)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(203, 208, 39, 73)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Big Rocks"]
+position = Vector2(-93, 639)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(203, 208, 39, 73)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Big Rocks"]
+position = Vector2(602, 539)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(203, 208, 39, 73)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Big Rocks"]
+position = Vector2(1038, 640)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(203, 208, 39, 73)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Big Rocks"]
+position = Vector2(1375, 802)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(203, 208, 39, 73)
+
+[node name="Sprite2D7" type="Sprite2D" parent="Big Rocks"]
+position = Vector2(1191, -128)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(203, 208, 39, 73)
+
+[node name="Sprite2D8" type="Sprite2D" parent="Big Rocks"]
+position = Vector2(877, -23)
+texture = ExtResource("7_d54n3")
+region_enabled = true
+region_rect = Rect2(203, 208, 39, 73)
 
 [node name="GUI" parent="." instance=ExtResource("5_ahey0")]
 process_mode = 3
