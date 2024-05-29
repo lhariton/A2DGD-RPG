@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bcjkcfoxin8qu"]
+[gd_scene load_steps=16 format=3 uid="uid://bcjkcfoxin8qu"]
 
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_enenp"]
 [ext_resource type="PackedScene" uid="uid://bym88y527ru2g" path="res://Scenes/Player/player.tscn" id="1_jx0ds"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ddyuil4eh2xl3" path="res://Scenes/game_over.tscn" id="5_q4f4d"]
 [ext_resource type="PackedScene" uid="uid://c1fcgvopwcr4e" path="res://Scenes/game_won.tscn" id="6_g8vm6"]
 [ext_resource type="Texture2D" uid="uid://t67ew2hpqrx3" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Props/Atlas-Props.png" id="7_d54n3"]
+[ext_resource type="PackedScene" uid="uid://vqpmfix2c176" path="res://Scenes/Stuff/chest.tscn" id="8_p1nyl"]
 [ext_resource type="AudioStream" uid="uid://bfigixixm8rat" path="res://Assets/Audio/Naruto Theme - The Raising Fighting Spirit.mp3" id="9_iugt8"]
 [ext_resource type="PackedScene" uid="uid://dswwqgj8qpdxw" path="res://Scenes/helper.tscn" id="10_bphtt"]
 
@@ -1812,6 +1813,9 @@ position = Vector2(877, -23)
 texture = ExtResource("7_d54n3")
 region_enabled = true
 region_rect = Rect2(203, 208, 39, 73)
+
+[node name="Chest" parent="." instance=ExtResource("8_p1nyl")]
+position = Vector2(-564, -349)
 
 [node name="GUI" parent="." instance=ExtResource("5_ahey0")]
 process_mode = 3
