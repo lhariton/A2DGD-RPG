@@ -118,6 +118,8 @@ func godMode():
 	defense *= 2
 	health *= 2
 	walkMS *= 2
+	$GodMode.visible = true
+	$GodMode.play("Idle")
 
 
 func _on_player_anim_animation_finished(anim_name):

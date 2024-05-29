@@ -1,4 +1,4 @@
-[gd_scene load_steps=244 format=3 uid="uid://bym88y527ru2g"]
+[gd_scene load_steps=250 format=3 uid="uid://bym88y527ru2g"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_6i32q"]
 [ext_resource type="Texture2D" uid="uid://bvhv6icgtk1kp" path="res://Assets/Monster_Pack_Free_Character/Monster Pack Character (Free)/Attack/Character_Attack.png" id="2_2rdgw"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bcevvlil5yrn5" path="res://Assets/Monster_Pack_Free_Character/Monster Pack Character (Free)/Attack/Equipment/Character_Attack_Sword.png" id="6_4pnr4"]
 [ext_resource type="Texture2D" uid="uid://cfdjlkkbqqycl" path="res://Assets/Monster_Pack_Free_Character/Monster Pack Character (Free)/Move/Equipment/Character_Move_Sword.png" id="6_batvq"]
 [ext_resource type="Texture2D" uid="uid://bt18phkdpptv" path="res://Assets/Ninja Adventure - Asset Pack/FX/Smoke/Smoke/SpriteSheet.png" id="6_c1mk2"]
+[ext_resource type="Texture2D" uid="uid://k37n542k6vf8" path="res://Assets/Ninja Adventure - Asset Pack/FX/Magic/Aura/SpriteSheetWhite.png" id="8_ksp1p"]
 [ext_resource type="AudioStream" uid="uid://bo30x2p1a4juf" path="res://Assets/Audio/player_hurt.wav" id="10_33s54"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8q71p"]
@@ -2156,7 +2157,43 @@ states/Start/position = Vector2(183, 229)
 states/Walk/node = SubResource("AnimationNodeBlendTree_s31h8")
 states/Walk/position = Vector2(587, 317)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_5uqh7"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_1vmdq"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_eb7pf"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_qwo60"), "Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_jujqq"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_akmc7"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_pffcg"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_l00vp"), "Dash", "Idle", SubResource("AnimationNodeStateMachineTransition_32d4j"), "Idle", "Dash", SubResource("AnimationNodeStateMachineTransition_j5v08")]
-graph_offset = Vector2(0, -104.985)
+graph_offset = Vector2(0, 99.4412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twi2x"]
+atlas = ExtResource("8_ksp1p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghbbv"]
+atlas = ExtResource("8_ksp1p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8jfr"]
+atlas = ExtResource("8_ksp1p")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8xsw"]
+atlas = ExtResource("8_ksp1p")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rrk5k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twi2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghbbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8jfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8xsw")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4txq4"]
 atlas = ExtResource("6_4pnr4")
@@ -2547,6 +2584,14 @@ parameters/Death/BlendSpace2D/blend_position = Vector2(-0.0018416, 0.00983608)
 parameters/Idle/BlendSpace2D/blend_position = Vector2(-0.00166667, 0.00510204)
 parameters/Idle/TimeScale/scale = 0.1
 parameters/Walk/BlendSpace2D/blend_position = Vector2(0, 0.00313473)
+
+[node name="GodMode" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, 7)
+sprite_frames = SubResource("SpriteFrames_rrk5k")
+animation = &"Idle"
+frame = 1
+frame_progress = 0.0826531
 
 [node name="SwordAnim" type="AnimatedSprite2D" parent="."]
 visible = false
