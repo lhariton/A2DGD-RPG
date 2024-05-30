@@ -31,4 +31,4 @@ offset_bottom = 431.0
 text = "Go to next level
 "
 
-[connection signal="pressed" from="Next Level" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Next Level" to="." method="_on_next_level_pressed"]

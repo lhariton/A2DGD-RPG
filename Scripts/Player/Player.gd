@@ -37,6 +37,7 @@ func checkIfGameOver():
 	#print(noMonsters)
 	if noMonsters == 0:
 		get_node("../LevelWon").game_over()
+	get_node("../LevelWon").game_over()
 
 func getInputVector():
 	var input_vector_x = Input.get_action_strength("WalkRight") - Input.get_action_strength("WalkLeft")
