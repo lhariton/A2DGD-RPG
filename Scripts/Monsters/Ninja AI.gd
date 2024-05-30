@@ -16,6 +16,8 @@ var current_state
 
 func _ready():
 	current_state = mobState["IDLE"]
+	if player == null:
+		player = get_tree().get_nodes_in_group("Player")[0]
 
 func _physics_process(delta):
 	if is_instance_valid(player):

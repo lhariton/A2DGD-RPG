@@ -16,6 +16,8 @@ var rollVector
 var canDash = true
 var dashing = false
 
+var inLastLevel = false
+
 
 func dash(delta):
 	#var input_vector = getInputVector()
@@ -38,8 +40,10 @@ func checkIfGameOver():
 	var level = get_node("../LevelWon")
 	if level == null:
 		level = get_node("../GameWon")
+		inLastLevel
 	if noMonsters == 0:
-		level.game_over()
+		if !inLastLevel:
+			level.game_over()
 	#level.game_over()
 
 func getInputVector():
