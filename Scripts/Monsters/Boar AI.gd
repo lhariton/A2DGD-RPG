@@ -7,6 +7,9 @@ var health: int = 3
 @onready var anim = get_node("Anim")
 @onready var hitDetector = get_node("HitDetector/CollisionShape2D")
 
+signal died_S(Boar)
+@export var mobType = "Boar AI"
+
 enum mobState {
 	IDLE, CHASING, ATTACKING, DEAD
 }
@@ -54,7 +57,7 @@ func hit(damage):
 	$Hurt.play()
 	if health <=0:
 		current_state = mobState["DEAD"]
-
+		#emit_signal("died_S", self)
 
 func _on_player_detector_body_entered(body):
 	if body.is_in_group("Player"):

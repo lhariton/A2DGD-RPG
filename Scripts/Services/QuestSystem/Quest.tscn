@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://5aavlm7wy7xk"]
+
+[ext_resource type="Script" path="res://Scripts/Services/QuestSystem/Quest.gd" id="1_spfos"]
+
+[node name="Quest" type="Node"]
+script = ExtResource("1_spfos")
+
+[node name="ItemRewards" type="Node" parent="."]
+
+[node name="Objectives" type="Node" parent="."]

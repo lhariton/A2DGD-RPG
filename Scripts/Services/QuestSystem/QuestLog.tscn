@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0br6me08kei5"]
+
+[ext_resource type="Script" path="res://Scripts/Services/QuestSystem/QuestLog.gd" id="1_hsygm"]
+[ext_resource type="PackedScene" uid="uid://5aavlm7wy7xk" path="res://Scripts/Services/QuestSystem/Quest.tscn" id="2_7sgd4"]
+
+[node name="QuestLog" type="Node"]
+script = ExtResource("1_hsygm")
+
+[node name="Available" type="Node" parent="."]
+
+[node name="Active" type="Node" parent="."]
+
+[node name="Completed" type="Node" parent="."]
+
+[node name="DataBase" type="Node" parent="."]
+
+[node name="Quest" parent="DataBase" instance=ExtResource("2_7sgd4")]
+title = "Slay Boars"
+description = "Kill all the boars on the map"
+ID = "MQ001"

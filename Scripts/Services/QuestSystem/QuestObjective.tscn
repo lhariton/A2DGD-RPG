@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drapu6jg2jdlh"]
+
+[ext_resource type="Script" path="res://Scripts/Services/QuestSystem/QuestObjective.gd" id="1_yufq6"]
+
+[node name="QuestObjective" type="Node"]
+script = ExtResource("1_yufq6")
