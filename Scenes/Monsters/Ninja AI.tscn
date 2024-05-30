@@ -1,6 +1,6 @@
 [gd_scene load_steps=135 format=3 uid="uid://bwwkf2bnqltaw"]
 
-[ext_resource type="Script" path="res://Scripts/Monsters/Boar AI.gd" id="1_jkuu5"]
+[ext_resource type="Script" path="res://Scripts/Monsters/Ninja AI.gd" id="1_wxsgp"]
 [ext_resource type="Texture2D" uid="uid://domy5ohqisjjc" path="res://Assets/Ninja_Animations/Ninja_Attack_side.png" id="2_w2wbn"]
 [ext_resource type="Texture2D" uid="uid://c01jxgrjpejfg" path="res://Assets/Ninja_Animations/Ninja_Idle_side.png" id="3_f78ir"]
 [ext_resource type="Texture2D" uid="uid://8v7n0hvnskp5" path="res://Assets/Ninja_Animations/Ninja_Walk_side.png" id="4_vc8dl"]
@@ -864,7 +864,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ex21"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mxuhs"]
+radius = 22.0
+height = 66.0
 
 [sub_resource type="Animation" id="Animation_6adek"]
 resource_name = "Attack"
@@ -956,24 +958,26 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cxxuh"]
-radius = 141.004
+radius = 152.013
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_alo2x"]
-size = Vector2(26, 26)
+size = Vector2(28, 43)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jo0wk"]
-radius = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmm0s"]
+size = Vector2(55, 64)
 
 [node name="Ninja" type="CharacterBody2D" groups=["Monster"]]
-script = ExtResource("1_jkuu5")
+script = ExtResource("1_wxsgp")
 
 [node name="Anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 20)
 sprite_frames = SubResource("SpriteFrames_45ptl")
-animation = &"Idle"
+animation = &"Attack"
+speed_scale = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_7ex21")
+position = Vector2(-1, -9)
+shape = SubResource("CapsuleShape2D_mxuhs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -989,14 +993,14 @@ shape = SubResource("CircleShape2D_cxxuh")
 position = Vector2(0, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetector"]
-position = Vector2(18, 5)
+position = Vector2(24, 0)
 shape = SubResource("RectangleShape2D_alo2x")
 
 [node name="AttackDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetector"]
-position = Vector2(-1, 0)
-shape = SubResource("CircleShape2D_jo0wk")
+position = Vector2(0.5, -10)
+shape = SubResource("RectangleShape2D_rmm0s")
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_eahh1")

@@ -5,7 +5,7 @@ extends CharacterBody2D
 var invuFrame: bool = false
 var attacking: bool = false
 var alive: bool = true
-var health: int = 10
+var health: int = 15
 var damage: int = 1
 var defense: int = 0
 
@@ -36,7 +36,7 @@ func checkIfGameOver():
 	var noMonsters = get_tree().get_nodes_in_group("Monster").size()
 	#print(noMonsters)
 	if noMonsters == 0:
-		get_node("../GameWon").game_over()
+		get_node("../LevelWon").game_over()
 
 func getInputVector():
 	var input_vector_x = Input.get_action_strength("WalkRight") - Input.get_action_strength("WalkLeft")
@@ -97,7 +97,7 @@ func _on_animation_tree_animation_finished(anim_name):
 func hit(damage):
 	if !invuFrame:
 		$Hurt.play()
-		health -= damage
+		health -= damage - defense
 		
 	if health <=0:
 		alive = false

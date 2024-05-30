@@ -2596,13 +2596,13 @@ frame_progress = 0.0826531
 [node name="SwordAnim" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_bfml3")
-animation = &"Sword_Attack_Down"
+animation = &"Sword_Attack_Left"
 frame = 1
 
 [node name="AttackDetectorArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetectorArea"]
-scale = Vector2(1.2, 1.2)
+scale = Vector2(1.4, 1.4)
 shape = SubResource("CapsuleShape2D_eci3c")
 disabled = true
 

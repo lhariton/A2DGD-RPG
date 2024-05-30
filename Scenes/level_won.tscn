@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmym7glclnxv8"]
+
+[ext_resource type="Script" path="res://Scripts/level_won.gd" id="1_ou7cy"]
+
+[node name="LevelWon" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_ou7cy")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 278.0
+offset_top = 145.0
+offset_right = 955.0
+offset_bottom = 529.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 310.0
+offset_top = 208.0
+offset_right = 950.0
+offset_bottom = 359.0
+theme_override_font_sizes/font_size = 60
+text = "Level conquered,
+GG EZ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next Level" type="Button" parent="."]
+offset_left = 491.0
+offset_top = 362.0
+offset_right = 762.0
+offset_bottom = 431.0
+text = "Go to next level
+"
+
+[connection signal="pressed" from="Next Level" to="." method="_on_retry_pressed"]
