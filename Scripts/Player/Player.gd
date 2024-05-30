@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var anim_tree = get_node("AnimationTree")
+var SHURIKEN = preload("res://Scenes/Stuff/projectile.tscn")
 
 var invuFrame: bool = false
 var attacking: bool = false
@@ -68,7 +69,10 @@ func _physics_process(delta):
 		anim_tree.get("parameters/playback").travel("Attack")	
 			
 	if Input.is_action_just_pressed("Dash"):
-			dash(delta)
+		dash(delta)
+			
+	if Input.is_action_just_pressed("Throw"):
+		throw()
 	
 	if (attacking == false) and (alive == true) and (dashing == false):
 		var input_vector = getInputVector()
@@ -87,6 +91,14 @@ func _physics_process(delta):
 			
 	move_and_slide()
 	
+func throw():
+	if SHURIKEN:
+		var shuriken = SHURIKEN.instantiate()
+		get_tree().current_scene.add_child(shuriken)
+		shuriken.global_position = self.global_position 
+	
+		var shuriken_rotation = self.global_position.direction_to(get_global_mouse_position()).angle()
+		shuriken.rotation = shuriken_rotation
 	
 func resetDash():
 	canDash = true
