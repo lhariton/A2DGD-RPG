@@ -72,3 +72,7 @@ func _process(delta):
 			spawnQ -= 1
 			spawnEnemy()
 	
+
+
+func _on_theme_song_finished():
+	$ThemeSong.play()

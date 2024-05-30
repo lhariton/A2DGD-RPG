@@ -961,7 +961,7 @@ _data = {
 radius = 152.013
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_alo2x"]
-size = Vector2(26, 32)
+size = Vector2(18, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmm0s"]
 size = Vector2(55, 64)
@@ -994,7 +994,7 @@ shape = SubResource("CircleShape2D_cxxuh")
 position = Vector2(0, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetector"]
-position = Vector2(23, -4)
+position = Vector2(19, -3)
 shape = SubResource("RectangleShape2D_alo2x")
 
 [node name="AttackDetector" type="Area2D" parent="."]
