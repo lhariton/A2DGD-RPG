@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://bcjkcfoxin8qu"]
 
-[ext_resource type="Script" path="res://Scenes/world.gd" id="1_enenp"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_enenp"]
 [ext_resource type="PackedScene" uid="uid://bym88y527ru2g" path="res://Scenes/Player/player.tscn" id="1_jx0ds"]
 [ext_resource type="PackedScene" uid="uid://b67cjeyp4nwi6" path="res://Scenes/Monsters/Boar AI.tscn" id="2_mhksi"]
 [ext_resource type="Texture2D" uid="uid://c2yueeun0tdq7" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Tilesets/Tileset-Animated Terrains-8 frames- transparency.png" id="3_d4hme"]
