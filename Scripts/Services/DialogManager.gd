@@ -49,7 +49,8 @@ func _unhandled_input(event):
 		canAdvanceLine
 	):
 		dialog.queue_free()
-		
+		timer.stop()
+		timer.queue_free()
 		currentLineIndex += 1
 		if currentLineIndex >= dialogLines.size():
 			isDialogActive = false
