@@ -64,9 +64,11 @@ func spawnEnemy():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	spawnQ += delta * spawnSpeed
-	print(spawnQ)
-	if spawnQ >= 1:
-		spawnQ -= 1
-		spawnEnemy()
+	#print(self.name)
+	if "World3" in self.name:
+		spawnQ += delta * spawnSpeed
+		print(spawnQ)
+		if spawnQ >= 1:
+			spawnQ -= 1
+			spawnEnemy()
 	

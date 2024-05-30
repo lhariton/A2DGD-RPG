@@ -120,7 +120,8 @@ func _on_animation_tree_animation_finished(anim_name):
 func hit(damage):
 	if !invuFrame:
 		$Hurt.play()
-		health -= damage - defense
+		var finalDmg = damage * defense / 100
+		health -= finalDmg
 		
 	if health <=0:
 		alive = false
