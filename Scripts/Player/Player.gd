@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var anim_tree = get_node("AnimationTree")
+var SHURIKEN = preload("res://Scenes/Stuff/projectile.tscn")
 
 var invuFrame: bool = false
 var attacking: bool = false
@@ -40,9 +41,10 @@ func checkIfGameOver():
 	var level = get_node("../LevelWon")
 	if level == null:
 		level = get_node("../GameWon")
-		inLastLevel
+		inLastLevel = true
 	if noMonsters == 0:
 		if !inLastLevel:
+			#pass
 			level.game_over()
 	#level.game_over()
 
@@ -62,10 +64,15 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("Attack"):
 		attacking = true
+		#if "Ninja" in self.name:
+			#$PlayerAnimite.flip_h = true
 		anim_tree.get("parameters/playback").travel("Attack")	
 			
 	if Input.is_action_just_pressed("Dash"):
-			dash(delta)
+		dash(delta)
+			
+	if Input.is_action_just_pressed("Throw"):
+		throw()
 	
 	if (attacking == false) and (alive == true) and (dashing == false):
 		var input_vector = getInputVector()
@@ -84,6 +91,14 @@ func _physics_process(delta):
 			
 	move_and_slide()
 	
+func throw():
+	if SHURIKEN:
+		var shuriken = SHURIKEN.instantiate()
+		get_tree().current_scene.add_child(shuriken)
+		shuriken.global_position = self.global_position 
+	
+		var shuriken_rotation = self.global_position.direction_to(get_global_mouse_position()).angle()
+		shuriken.rotation = shuriken_rotation
 	
 func resetDash():
 	canDash = true
@@ -105,7 +120,14 @@ func _on_animation_tree_animation_finished(anim_name):
 func hit(damage):
 	if !invuFrame:
 		$Hurt.play()
-		health -= damage - defense
+		var finalDmg:float
+		if defense != 0:
+			finalDmg = damage / defense
+		else:
+			finalDmg = damage
+		print(health)
+		print(finalDmg)
+		health -= finalDmg
 		
 	if health <=0:
 		alive = false

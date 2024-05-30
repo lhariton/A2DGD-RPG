@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://brmmk4yyu1d0u"]
+[gd_scene load_steps=44 format=3 uid="uid://brmmk4yyu1d0u"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_titud"]
 [ext_resource type="PackedScene" uid="uid://cpbshvdftex6s" path="res://Scenes/Monsters/Boar spawned.tscn" id="2_m2ds1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://o7nyfvvr0qej" path="res://Scenes/Monsters/Ninja spawned.tscn" id="3_0de5a"]
 [ext_resource type="Texture2D" uid="uid://b87p15gilq5d" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Tilesets/Tileset-Terrain2.png" id="3_btwsw"]
 [ext_resource type="PackedScene" uid="uid://bym88y527ru2g" path="res://Scenes/Player/player.tscn" id="4_sasuh"]
+[ext_resource type="PackedScene" uid="uid://d3lmrgwefnp73" path="res://Scenes/Player/playerNinja.tscn" id="6_8301y"]
 [ext_resource type="PackedScene" uid="uid://bwwkf2bnqltaw" path="res://Scenes/Monsters/Ninja AI.tscn" id="6_ny3m3"]
 [ext_resource type="PackedScene" uid="uid://2gjk38bo8srt" path="res://Scenes/Stuff/tree.tscn" id="7_sftwx"]
 [ext_resource type="Texture2D" uid="uid://t67ew2hpqrx3" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Props/Atlas-Props.png" id="8_8p0cd"]
@@ -1473,22 +1474,26 @@ layer_1/tile_data = PackedInt32Array(196588, 0, 1, 131052, 0, 1, 65516, 0, 1, -2
 layer_2/name = "Wall"
 layer_2/tile_data = PackedInt32Array()
 
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("4_sasuh")]
-position = Vector2(54, -35)
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("6_8301y")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(54, -35)
 zoom = Vector2(1.5, 1.5)
+
+[node name="PlayerNinja" parent="." groups=["Player"] instance=ExtResource("4_sasuh")]
+visible = false
+position = Vector2(54, -35)
 
 [node name="ExistingEnemies" type="Node" parent="."]
 
 [node name="Ninja" parent="ExistingEnemies" node_paths=PackedStringArray("player") instance=ExtResource("6_ny3m3")]
 position = Vector2(485, 191)
 scale = Vector2(0.6, 0.6)
-player = NodePath("../../Player/AnimationPlayer")
+player = NodePath("../../PlayerNinja/AnimationPlayer")
 
 [node name="NinjaBoss" parent="ExistingEnemies" node_paths=PackedStringArray("player") instance=ExtResource("6_ny3m3")]
 position = Vector2(1081, 560)
-player = NodePath("../../Player/AnimationPlayer")
+player = NodePath("../../PlayerNinja/AnimationPlayer")
 
 [node name="Trees" type="Node" parent="."]
 

@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export var player: CharacterBody2D
 var speed: int = 2500
-var damage: int = 2
-var health: int = 3
+var damage: int = 3
+var health: int = 10
 @onready var anim = get_node("Anim")
 @onready var hitDetector = get_node("HitDetector/CollisionShape2D")
 
