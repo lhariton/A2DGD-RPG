@@ -40,7 +40,7 @@ func checkIfGameOver():
 	var level = get_node("../LevelWon")
 	if level == null:
 		level = get_node("../GameWon")
-		inLastLevel
+		inLastLevel = true
 	if noMonsters == 0:
 		if !inLastLevel:
 			#pass
