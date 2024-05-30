@@ -67,7 +67,7 @@ func _process(delta):
 	#print(self.name)
 	if "World3" in self.name:
 		spawnQ += delta * spawnSpeed
-		print(spawnQ)
+		#print(spawnQ)
 		if spawnQ >= 1:
 			spawnQ -= 1
 			spawnEnemy()

@@ -1480,7 +1480,7 @@ layer_2/tile_data = PackedInt32Array()
 position = Vector2(54, -35)
 zoom = Vector2(1.5, 1.5)
 
-[node name="PlayerNinja" parent="." groups=["Player"] instance=ExtResource("4_sasuh")]
+[node name="PlayerClone" parent="." groups=["Player"] instance=ExtResource("4_sasuh")]
 visible = false
 position = Vector2(54, -35)
 
@@ -1489,11 +1489,11 @@ position = Vector2(54, -35)
 [node name="Ninja" parent="ExistingEnemies" node_paths=PackedStringArray("player") instance=ExtResource("6_ny3m3")]
 position = Vector2(485, 191)
 scale = Vector2(0.6, 0.6)
-player = NodePath("../../PlayerNinja/AnimationPlayer")
+player = NodePath("../../PlayerClone/AnimationPlayer")
 
 [node name="NinjaBoss" parent="ExistingEnemies" node_paths=PackedStringArray("player") instance=ExtResource("6_ny3m3")]
 position = Vector2(1081, 560)
-player = NodePath("../../PlayerNinja/AnimationPlayer")
+player = NodePath("../../PlayerClone/AnimationPlayer")
 
 [node name="Trees" type="Node" parent="."]
 

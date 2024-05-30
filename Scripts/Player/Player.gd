@@ -122,7 +122,7 @@ func hit(damage):
 		$Hurt.play()
 		var finalDmg:float
 		if defense != 0:
-			finalDmg = damage / defense
+			finalDmg = damage * (1/defense) + 1
 		else:
 			finalDmg = damage
 		print(health)
