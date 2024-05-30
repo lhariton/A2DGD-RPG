@@ -6,7 +6,7 @@ var damage: int = 2
 var health: int = 3
 @onready var anim = get_node("Anim")
 @onready var hitDetector = get_node("HitDetector/CollisionShape2D")
-
+var SHURIKEN = preload("res://Scenes/Stuff/projectile.tscn")
 
 enum mobState {
 	IDLE, CHASING, ATTACKING, DEAD
@@ -31,6 +31,7 @@ func _physics_process(delta):
 			mobState["ATTACKING"]:
 				anim.play("Attack")
 				velocity = Vector2(0,0)
+				throw()
 			mobState["DEAD"]:
 				velocity = Vector2(0,0)
 				$AnimationPlayer.play("Death")
@@ -46,6 +47,13 @@ func _physics_process(delta):
 			hitDetector.position = Vector2(17, 7)
 		move_and_slide()
 
+func throw():
+	if SHURIKEN:
+		var shuriken = SHURIKEN.instantiate()
+		get_tree().current_scene.add_child(shuriken)
+		shuriken.global_position = self.global_position
+	
+		
 
 func hit(damage):
 	health -= damage

@@ -1956,25 +1956,10 @@ position = Vector2(1190, -135)
 [node name="Big Rock8" parent="Big Rocks" instance=ExtResource("9_6su1k")]
 position = Vector2(879, -25)
 
-[node name="Chest" parent="." instance=ExtResource("8_p1nyl")]
-position = Vector2(-73, 20)
-
-[node name="GUI" parent="." instance=ExtResource("5_ahey0")]
-process_mode = 3
-visible = false
-
-[node name="GameOver" parent="." instance=ExtResource("5_q4f4d")]
-
-[node name="GameWon" parent="." instance=ExtResource("6_g8vm6")]
-visible = false
-
-[node name="ThemeSong" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_iugt8")
-volume_db = -5.0
-
 [node name="Fire Patches" type="Node" parent="."]
 
 [node name="Flame" parent="Fire Patches" instance=ExtResource("15_ba2aw")]
+visible = false
 position = Vector2(-83, -75)
 
 [node name="Flame2" parent="Fire Patches" instance=ExtResource("15_ba2aw")]
@@ -2048,3 +2033,19 @@ position = Vector2(781, 279)
 
 [node name="Flame25" parent="Fire Patches" instance=ExtResource("15_ba2aw")]
 position = Vector2(875, 276)
+
+[node name="Chest" parent="." instance=ExtResource("8_p1nyl")]
+position = Vector2(-73, 20)
+
+[node name="GUI" parent="." instance=ExtResource("5_ahey0")]
+process_mode = 3
+visible = false
+
+[node name="GameOver" parent="." instance=ExtResource("5_q4f4d")]
+
+[node name="GameWon" parent="." instance=ExtResource("6_g8vm6")]
+visible = false
+
+[node name="ThemeSong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_iugt8")
+volume_db = -5.0
