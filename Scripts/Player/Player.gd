@@ -35,9 +35,12 @@ func dash(delta):
 func checkIfGameOver():
 	var noMonsters = get_tree().get_nodes_in_group("Monster").size()
 	#print(noMonsters)
+	var level = get_node("../LevelWon")
+	if level == null:
+		level = get_node("../GameWon")
 	if noMonsters == 0:
-		get_node("../LevelWon").game_over()
-	#get_node("../LevelWon").game_over()
+		level.game_over()
+	#level.game_over()
 
 func getInputVector():
 	var input_vector_x = Input.get_action_strength("WalkRight") - Input.get_action_strength("WalkLeft")
