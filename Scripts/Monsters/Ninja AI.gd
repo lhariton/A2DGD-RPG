@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export var player: CharacterBody2D
 var speed: int = 2500
-var damage: int = 7
-var health: int = 10
+var damage: int = 6
+var health: int = 13
 @onready var anim = get_node("Anim")
 @onready var hitDetector = get_node("HitDetector/CollisionShape2D")
 var SHURIKEN = preload("res://Scenes/Stuff/projectile.tscn")
