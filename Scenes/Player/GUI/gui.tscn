@@ -83,6 +83,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="Dialog" parent="DialogContainer/Panel" instance=ExtResource("6_wis50")]
+layout_mode = 0
 offset_left = 519.0
 offset_right = 559.0
 
