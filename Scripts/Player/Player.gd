@@ -43,6 +43,7 @@ func checkIfGameOver():
 		inLastLevel
 	if noMonsters == 0:
 		if !inLastLevel:
+			#pass
 			level.game_over()
 	#level.game_over()
 
@@ -62,6 +63,8 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("Attack"):
 		attacking = true
+		#if "Ninja" in self.name:
+			#$PlayerAnimite.flip_h = true
 		anim_tree.get("parameters/playback").travel("Attack")	
 			
 	if Input.is_action_just_pressed("Dash"):
