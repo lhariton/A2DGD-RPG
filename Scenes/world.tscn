@@ -2039,7 +2039,6 @@ position = Vector2(-73, 20)
 
 [node name="GUI" parent="." instance=ExtResource("5_ahey0")]
 process_mode = 3
-visible = false
 
 [node name="GameOver" parent="." instance=ExtResource("5_q4f4d")]
 
