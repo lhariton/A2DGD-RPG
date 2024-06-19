@@ -5889,7 +5889,7 @@ states/Start/position = Vector2(184, 229)
 states/Walk/node = SubResource("AnimationNodeBlendTree_s31h8")
 states/Walk/position = Vector2(587, 317)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_5uqh7"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_1vmdq"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_eb7pf"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_qwo60"), "Attack", "Walk", SubResource("AnimationNodeStateMachineTransition_jujqq"), "Walk", "Attack", SubResource("AnimationNodeStateMachineTransition_akmc7"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_pffcg"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_l00vp"), "Dash", "Idle", SubResource("AnimationNodeStateMachineTransition_32d4j"), "Idle", "Dash", SubResource("AnimationNodeStateMachineTransition_j5v08")]
-graph_offset = Vector2(0, 162.884)
+graph_offset = Vector2(0, 8.65855)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twi2x"]
 atlas = ExtResource("8_omo88")
@@ -6291,6 +6291,7 @@ animations = [{
 script = ExtResource("1_g5041")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_8q71p")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
@@ -6337,6 +6338,7 @@ animation = &"Sword_Attack_Down"
 frame = 1
 
 [node name="AttackDetectorArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetectorArea"]
 position = Vector2(-15, 0)

@@ -2572,6 +2572,9 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vyhv4")
+}
 tree_root = SubResource("AnimationNodeStateMachine_dfvr2")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Attack/BlendSpace2D/blend_position = Vector2(0, 0.00313473)
