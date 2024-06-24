@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bcjkcfoxin8qu"]
+[gd_scene load_steps=43 format=3 uid="uid://bcjkcfoxin8qu"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_enenp"]
 [ext_resource type="PackedScene" uid="uid://bym88y527ru2g" path="res://Scenes/Player/player.tscn" id="1_jx0ds"]
@@ -12,9 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://vqpmfix2c176" path="res://Scenes/Stuff/chest.tscn" id="8_p1nyl"]
 [ext_resource type="PackedScene" uid="uid://dyvkdpl1oskyb" path="res://Scenes/Stuff/big_rock.tscn" id="9_6su1k"]
 [ext_resource type="AudioStream" uid="uid://bfigixixm8rat" path="res://Assets/Audio/Naruto Theme - The Raising Fighting Spirit.mp3" id="9_iugt8"]
-[ext_resource type="PackedScene" uid="uid://dswwqgj8qpdxw" path="res://Scenes/helper.tscn" id="10_bphtt"]
+[ext_resource type="PackedScene" uid="uid://dswwqgj8qpdxw" path="res://Scenes/NPCs/helper.tscn" id="10_bphtt"]
 [ext_resource type="PackedScene" uid="uid://bmym7glclnxv8" path="res://Scenes/level_won.tscn" id="14_sw3xv"]
 [ext_resource type="PackedScene" uid="uid://ksgh086fxbql" path="res://Scenes/Stuff/flame.tscn" id="15_ba2aw"]
+[ext_resource type="PackedScene" uid="uid://dn1lpawh1qdhh" path="res://Scenes/NPCs/villager.tscn" id="16_8kx5e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jy6y3"]
 texture = ExtResource("3_d4hme")
@@ -2048,5 +2049,9 @@ visible = false
 [node name="ThemeSong" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_iugt8")
 volume_db = -5.0
+
+[node name="Villager" parent="." instance=ExtResource("16_8kx5e")]
+position = Vector2(-540, -334)
+Story_text = PackedStringArray("Hey dude!", "Kill ALL the boars!!!")
 
 [connection signal="finished" from="ThemeSong" to="." method="_on_theme_song_finished"]

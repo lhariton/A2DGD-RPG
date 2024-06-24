@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://bo30x2p1a4juf" path="res://Assets/Audio/player_hurt.wav" id="10_33s54"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8q71p"]
+radius = 9.0
+height = 20.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_upi7v"]
 atlas = ExtResource("2_2rdgw")
@@ -2559,6 +2561,7 @@ animations = [{
 script = ExtResource("1_6i32q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_8q71p")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]

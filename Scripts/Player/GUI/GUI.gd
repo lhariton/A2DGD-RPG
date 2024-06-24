@@ -11,7 +11,7 @@ func _ready():
 
 func _process(delta):
 	$hp_bar.value = get_node("../Player").health
-	if Input.is_action_just_pressed("Pause"):
+	if Input.is_action_just_pressed("Pause"): #and (Game.cutSceneCurrent == false):
 		get_tree().paused = !get_tree().paused
 		get_node("Container").visible = get_tree().paused
 
@@ -40,6 +40,7 @@ func _on_quests_pressed():
 	hideGUI()
 	$Container/VBoxContainer/Quests.disabled = true
 	$Container/Quests.show()
+	#get_node("Container/Quests");
 
 
 func _on_button_pressed():

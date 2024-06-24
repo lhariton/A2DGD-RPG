@@ -1,24 +1,32 @@
-[gd_scene format=3 uid="uid://b7bjtsr4j2cbq"]
+[gd_scene load_steps=2 format=3 uid="uid://b7bjtsr4j2cbq"]
+
+[ext_resource type="Script" path="res://Scripts/Player/GUI/quests.gd" id="1_nrlb7"]
 
 [node name="Quests" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_nrlb7")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 522.0
-offset_top = 265.0
-offset_right = 649.0
-offset_bottom = 305.0
+offset_left = 562.0
+offset_top = 153.0
+offset_right = 742.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 45
+text = "Quests
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Quests" type="Label" parent="."]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 10.0
-offset_right = 124.0
-offset_bottom = 30.0
+offset_left = 470.0
+offset_top = 221.0
+offset_right = 838.0
+offset_bottom = 431.0
 text = "Placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1

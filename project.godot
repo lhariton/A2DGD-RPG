@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogManager="*res://Scripts/Services/DialogManager.gd"
 QuestLog="*res://Scripts/Services/QuestSystem/QuestLog.gd"
+Game="*res://Scripts/Global/Game.gd"
 
 [dotnet]
 

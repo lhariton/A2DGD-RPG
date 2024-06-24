@@ -30,8 +30,9 @@ func _physics_process(delta):
 				anim.play("Idle")
 				velocity = Vector2(0,0)
 			mobState["CHASING"]:
-				anim.play("Move")
-				velocity = direction * speed * delta
+				if get_node("AnimationPlayer").current_animation != "Death":
+					anim.play("Move")
+					velocity = direction * speed * delta
 			mobState["ATTACKING"]:
 				anim.play("Attack")
 				velocity = Vector2(0,0)
@@ -56,7 +57,10 @@ func hit(damage):
 	health -= damage
 	$Hurt.play()
 	if health <=0:
-		current_state = mobState["DEAD"]
+		if !current_state == mobState["DEAD"]:
+			Game.boars_slain += 1
+			current_state = mobState["DEAD"]
+		
 		#emit_signal("died_S", self)
 
 func _on_player_detector_body_entered(body):

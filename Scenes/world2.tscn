@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c2yueeun0tdq7" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Tilesets/Tileset-Animated Terrains-8 frames- transparency.png" id="2_ir7qm"]
 [ext_resource type="Texture2D" uid="uid://b87p15gilq5d" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Tilesets/Tileset-Terrain2.png" id="3_tx1v1"]
 [ext_resource type="PackedScene" uid="uid://bym88y527ru2g" path="res://Scenes/Player/player.tscn" id="4_cf7md"]
-[ext_resource type="PackedScene" uid="uid://dswwqgj8qpdxw" path="res://Scenes/helper.tscn" id="5_v7voe"]
+[ext_resource type="PackedScene" uid="uid://dswwqgj8qpdxw" path="res://Scenes/NPCs/helper.tscn" id="5_v7voe"]
 [ext_resource type="PackedScene" uid="uid://bwwkf2bnqltaw" path="res://Scenes/Monsters/Ninja AI.tscn" id="6_t0snf"]
 [ext_resource type="PackedScene" uid="uid://2gjk38bo8srt" path="res://Scenes/Stuff/tree.tscn" id="7_al5wn"]
 [ext_resource type="Texture2D" uid="uid://t67ew2hpqrx3" path="res://Assets/EPIC RPG World Pack - [FREE Demo]Ancient Ruins/EPIC RPG World Pack - [FREE Demo]Ancient Ruins - Copia/Props/Atlas-Props.png" id="8_ypwne"]
